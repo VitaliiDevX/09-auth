@@ -4,9 +4,9 @@ import css from "./NoteForm.module.css";
 import type { NoteTag } from "../../types/note";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { createNote } from "@/lib/api/api";
 import { useRouter } from "next/navigation";
 import { useNoteStore } from "@/lib/store/noteStore";
+import { createNote } from "@/lib/api/clientApi";
 
 interface NoteFormProps {
   tags: NoteTag[];
@@ -48,7 +48,7 @@ export default function NoteForm({ tags }: NoteFormProps) {
   const handleChange = (
     event: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setDraft({
       ...draft,
