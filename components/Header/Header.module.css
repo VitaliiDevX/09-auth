@@ -22,8 +22,9 @@
 }
 
 .navigation {
-  list-style: none;
   display: flex;
+  align-items: center;
+  list-style: none;
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -35,7 +36,9 @@
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 4px;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .navigation li a:hover {

@@ -1,6 +1,6 @@
 import NoteForm from "@/components/NoteForm/NoteForm";
 import css from "./CreateNote.module.css";
-import { getTags } from "@/lib/api";
+import { getTags } from "@/lib/api/serverApi";
 
 export default function CreateNote() {
   const tags = getTags();

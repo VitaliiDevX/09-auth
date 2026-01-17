@@ -2,8 +2,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type { Note } from "../../types/note";
 import css from "./NoteItem.module.css";
 import toast from "react-hot-toast";
-import { deleteNote } from "@/lib/api";
 import Link from "next/link";
+import { deleteNote } from "@/lib/api/clientApi";
 
 interface NoteItemProps {
   note: Note;
@@ -27,7 +27,7 @@ function NoteItem({ note }: NoteItemProps) {
 
   const handleDeleteNote = (
     e: React.MouseEvent<HTMLButtonElement>,
-    id: string
+    id: string,
   ) => {
     e.preventDefault();
     e.stopPropagation();

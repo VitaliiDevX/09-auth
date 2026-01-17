@@ -8,12 +8,12 @@ import { Toaster } from "react-hot-toast";
 import Loader from "@/components/Loader/Loader";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import EmptyMessage from "@/components/EmptyMessage/EmptyMessage";
-import { fetchNotes } from "@/lib/api";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
 import { NoteTag } from "@/types/note";
 import Link from "next/link";
+import { fetchNotes } from "@/lib/api/clientApi";
 
 type NotesClientProps = {
   tag?: NoteTag;
