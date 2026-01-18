@@ -1,6 +1,6 @@
+import { api } from "@/app/api/api";
 import { Note, NoteTag } from "@/types/note";
 import { User } from "@/types/user";
-import { api } from "./api";
 import { cookies } from "next/headers";
 
 interface FetchNotesResponse {

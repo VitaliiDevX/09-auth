@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { register, UserData } from "@/lib/api/clientApi";
 import css from "./SignUpPage.module.css";
 import { ApiError } from "@/app/api/api";
+import { useAuthStore } from "@/lib/store/authStore";
 
 export default function SignUpPage() {
   const router = useRouter();
   const [error, setError] = useState("");
+  const setUser = useAuthStore((state) => state.setUser);
 
   const handleSubmit = async (formData: FormData) => {
     const userData = Object.fromEntries(formData) as unknown as UserData;
@@ -17,6 +19,7 @@ export default function SignUpPage() {
       const user = await register(userData);
 
       if (user) {
+        setUser(user);
         router.push("/profile");
       } else {
         setError("Invalid email or password");
